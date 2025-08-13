@@ -7,23 +7,28 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.11.*"
+numpy = "^1.26.4"
+
+# Configuración base
 dotenv = "^0.9.9"
+streamlit = "^1.45.1"
+
+# LangChain y extensiones
 langchain = "^0.3.25"
 langchain-core = "^0.3.63"
-langchain-tavily = "^0.2.1"
+langchain-community = "^0.3.24"
 langchain-openai = "^0.3.19"
-sqlalchemy = "^2.0.41"
-pypdf2 = "^3.0.1"
-psycopg2-binary = "^2.9.10"
-streamlit = "^1.28.0"  # Añadir Streamlit
+langchain-tavily = "^0.2.1"
+langchain-postgres = "^0.0.14"
 
-langchain-community = "^0.3.0"  # Más flexible
-langchain-postgres = "*"         # Déjalo completamente abierto
-numpy = [
-    {version = "^1.21.0", python = "<3.12"},
-    {version = "^2.0.0", python = ">=3.12"}
-]
+# Base de datos y vector store
+sqlalchemy = "^2.0.41"
+psycopg = { version = "^3.2.1", extras = ["binary"] }
+
+# Otros
+pypdf2 = "^3.0.1"
+
 
 [build-system]
 requires = ["poetry-core"]
